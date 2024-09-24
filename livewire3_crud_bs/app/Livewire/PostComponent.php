@@ -41,7 +41,7 @@ class PostComponent extends Component
 
         $this->validate();
         $this->form->save();
-        session()->flash('success', 'Post created successfully.');
+        session()->flash('success', 'Post criado com sucesso.');
         $this->reset('form.title','form.body');
         $this->closeModal();
     }
@@ -79,7 +79,7 @@ class PostComponent extends Component
                 'body' => $this->form->body,
             ]);
             $this->postId='';
-            session()->flash('success', 'Post updated successfully.');
+            session()->flash('success', 'Post atualizado com sucesso.');
             $this->closeModal();
             $this->reset('form.title','form.body');
         }
@@ -87,8 +87,8 @@ class PostComponent extends Component
     public function delete($id)
     {
         Post::find($id)->delete();
-        session()->flash('success', 'Post deleted successfully.');
-        $this->reset('title','body');
+        session()->flash('success', 'Post deletado com sucesso.');
+//        $this->reset('title','body');
     }
     public function openModal()
     {
